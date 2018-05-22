@@ -1,0 +1,53 @@
+<% include header %>
+    <h2>View inventory</h2>
+    <div class='multiform'>
+        <form id='viewInvForm'>
+            <div class='multiforminputs'>
+                <label for='searchBy'>Search by: </label>
+                <br>
+                <select id='searchBy' name='searchBy'>
+                    <option value='kegid'>Keg ID</option>
+                    <option value='style'>Style/contents</option>
+                    <option value='batchid'>Batch ID</option>
+                    <option value='location'>Location</option>
+                    <option value='condition'>Status</option>
+                    <!-- <option value='all'>View all</option> use Search all button for now-->
+                </select>
+            </div>
+            <div class='multiforminputs'>
+                <label for='searchTerm'>Search term: </label>
+                <br>
+                <input id='searchTerm' placeholder='(ID #, location, etc.)'>
+                <div class='errorDialog' id='searchTermWarning'></div>
+            </div>
+            <div>
+                <!-- <button type='button' class='formbutton' id='showallButton'>Show all</button>
+                OR -->
+                <button type='button' class='formbutton' id='searchButton'>Search</button>
+                <button type='button' class='formbutton' id='resetButton'>Reset</button>
+            </div>
+        </form>
+    </div>
+    <div class='catalog' id='invSearchResults'>
+            <table>  
+                <thead id='tabHead'>
+                    <tr>
+                        <th id='sortBy'>Sort:</th>
+                        <th id='kegID' class='hoverable'>Keg ID</th>
+                        <th id='kegType' class='hoverable'>Type</th> 
+                        <th id='kegStatus' class='hoverable'>Status</th> 
+                        <th id='kegStyle' class='hoverable'>Style</th> 
+                        <th id='kegbatchID' class='hoverable'>Batch</th> 
+                        <th id='kegLocation' class='hoverable'>Location</th>
+                        <th id='kegLastChange' class='hoverable'>Last change</th>
+                        <th id='kegNotes'>Notes</th>
+                    </tr>
+                </thead>
+                <tbody id='invSearchBody'></tbody>
+            </table>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src='javascripts/viewInv.js'></script>
+<% include footer %>

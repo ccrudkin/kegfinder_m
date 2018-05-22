@@ -1,0 +1,28 @@
+<% include header %>
+    <h2>Login</h2>
+    <% if (status != '') { %>
+        <%- "<p class='loginSuccess content'>" %><%= status %><%- "</p>" %>
+    <% } %>
+    <% if (errors != '') { %>
+        <%- "<p class='loginWarning content'>" %><%= errors %><%- "</p>" %>
+    <% } %>
+
+    <div class='multiform'>
+        <form id='registerform' action='/login' method='post'>
+            <div class='multiforminputs'>
+                <label for='username'>Username:</label>
+                <br>
+                <input id='username' placeholder="Username" name='username'>
+            </div>
+            <div class='multiforminputs'>
+                    <label for='password'>Password:</label>
+                    <br>
+                    <input id='password' placeholder="Password" type='password' name='password'>
+            </div>
+            <div class='multiforminputs'>
+                    <input type='submit' value='Login' class='formbutton'>
+            </div>
+        </form>
+    </div>
+
+<% include footer %>

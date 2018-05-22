@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= pagetitle %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet"> 
+  </head>
+  <body>
+    <div class='navbar'>
+        <a href='/' id='navhome'>Home</a>
+        <a href='/viewInventory'>View inventory</a>
+        <a href='/modInventory'>Update keg inventory</a>
+        <a href='/newInventory'>Add kegs to inventory</a>
+        <% if (!user) { %>
+          <%- "<a href='/login/register' class='logButton'>Register</a>" %>
+        <% } %>
+        <% if (!user) { %>
+          <%- "<a href='/login' class='logButton'>Login</a>" %>
+        <% } %>
+        <% if (user) { %>
+          <%- "<a href='/logout' class='logButton'>Logout</a>" %>
+        <% } %>
+        <% if (user) { %>
+          <%- "<div class='userid' id='userid'>" %><%= userid %><%- "</div>" %>
+        <% } %>
+    </div>

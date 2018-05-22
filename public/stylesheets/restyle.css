@@ -1,0 +1,216 @@
+* {
+  box-sizing: border-box;
+  font-size: 20px;
+  -webkit-text-size-adjust: none;
+}
+
+body {
+  width: 95%;
+  font: medium Roboto, sans-serif;
+  margin: auto;
+}
+
+p {
+    margin-left: 10px;
+    font-size: 200%;
+}
+
+a {
+  color: #5dade2;
+}
+
+h1 {
+  font-family: Roboto, sans-serif;
+  position: relative;
+  top: 35px;
+}
+
+h2 {
+  font-family: Roboto, sans-serif;
+  font-size: 300%;
+  width: 80%;
+  position: relative;
+  top: 75px;
+  color: #45b39d;
+  background-color: #fff;
+  border: 2px solid #45b39d;
+  border-radius: 8px;
+  padding: 5px 10px;
+}
+
+.navbar {
+  display: none;
+  width: 95%;
+  background-color: #45b39d;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  z-index: 10;
+  border-radius: 8px;
+  padding: 3px;
+  margin: 5px 0px 0px 0px;
+}
+
+.navbarContainer {
+    width: 95%;
+    position: fixed;
+    top: 0px;
+    background-color: #fff;
+    border-radius: 8px;
+    z-index: 10;
+}
+
+.navbar a {
+  font-family: Roboto;
+  width: 100%;
+  font-size: 300%;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-block;
+  color: #e5e8e8;
+  padding: 10px 20px;
+  margin: auto;
+}
+
+.navbarButton a {
+    font-family: Roboto;
+    width: 100%;
+    font-size: 300%;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-block;
+    color: #45b39d;
+    background-color: #e5e8e8;
+    border: 3px solid #45b39d;
+    padding: 10px 20px;
+    border-radius: 8px;
+    margin: auto;
+  }
+
+.navbar a:hover {
+  color: #45b39d;
+  background-color: #fff;
+}
+
+.navbarButton a:active {
+    color: #e5e8e8;
+    background-color: #45b39d;
+    cursor: pointer;
+}
+
+.textBody {
+    width: 90%;
+    position: relative;
+    top: 75px;
+    margin-left: 20px;
+}
+
+.space {
+  position: relative;
+  top: 500px;
+}
+
+.formbutton {
+  color: #e5e8e8;
+  font-family: Roboto, sans-serif;
+  font-weight: 700;
+  border: 2px solid #45b39d;
+  cursor: pointer;
+  background-color: #45b39d;
+  padding: 5px 10px;
+  border-radius: 3px;
+  margin: 5px 5px auto;
+}
+
+#resetButton {
+  color: #eb984e;
+  background-color: #e5e8e8;
+  border: 2px solid #eb984e;
+}
+
+#resetButton:hover {
+  color: #e5e8e8;
+  background-color: #eb984e;
+  border: 2px solid #eb984e;
+}
+
+.formbutton:hover {
+  color: #45b39d;
+  background-color: #e5e8e8;
+  border: 2px solid #45b39d;
+  padding: 5px 10px;
+}
+
+.multiform {
+  font-family: Roboto, sans-serif;
+  color: #424949;
+  padding: 10px;
+  margin: 10px auto;
+}
+
+.multiform .multiforminputs {
+  font-family: Roboto, sans-serif;
+  color: #424949;
+  padding: 5px;
+  margin: auto;
+}
+
+input, select, textarea {
+  border: solid 1px #707b7c;
+  padding: 0px 0px 2px 2px;
+  border-radius: 2px;
+}
+
+input:focus, select:focus, textarea:focus {
+  border: solid 1px #5dade2;
+  box-shadow: 0 0 3px #5dade2;
+}
+
+.errorDialog {
+  font-family: Roboto, sans-serif;
+  color: #c0392b;
+}
+
+.catalog {
+  padding-bottom: 30px;
+}
+
+.catalog table {
+  border-collapse: collapse;
+  border-left: 3px solid #45b39d;
+  border-radius: 3px;
+  margin: 10px auto;
+}
+
+.catalog thead {
+  font-family: Roboto, sans-serif;
+  font-size: 18px;
+  color: #424949;
+  background-color: #e5e8e8;
+}
+
+.catalog tbody {
+  font-family: Roboto, sans-serif;
+  font-size: 14px;
+}
+
+.catalog th, td {
+  padding: 5px 10px;
+}
+
+.catalog tbody tr:nth-child(even) {
+  background-color: #e5e8e8;
+}
+
+#updateKegs {
+  width: 400px;
+  height: 150px;
+}
+
+#othernotes {
+  width: 300px;
+  height: 60px;
+}
+
+#searchTermWarning {
+  display: inline;
+}

@@ -1,0 +1,39 @@
+<% include header %>
+    <h2>Initialize new kegs</h2>
+    <div class='multiform'>
+        <form id='newInvForm'>
+            <div class='multiforminputs'>
+                <label for='newInvSize'>Number: </label>
+                <br>
+                <input id='newInvSize' placeholder='Number of new kegs'>
+            </div>
+            <div class='multiforminputs'>
+                <label for='kegType'>Type: </label>
+                <br>
+                <select id='kegType' name='kegType'>
+                    <option value='half'>Half barrel</option>
+                    <option value='sixth'>Sixth barrel</option>
+                    <option value='firkin'>Firkin</option>
+                </select>
+            </div>
+            <div class='multiforminputs'>
+                <label for='nameScheme'>Naming scheme: </label>
+                <br>
+                <select id='nameScheme'>
+                    <option value='startOne'>Count from 1</option>
+                    <option value='alphaNum' disabled>4-place alphanumeric</option>
+                </select>
+            </div>
+            <!-- <div class='multiforminputs checkbox'>
+                    <label for='addToInvCheck'>Add to existing inventory: </label>
+                    <input type='checkbox' id='addToInvCheck'>
+            </div> -->
+            <div>
+                <button type='button' class='formbutton' id='createNewInv'>Create</button>
+                <p id='errorDialog' class='errorDialog'></p>
+                <p id='successDialog' class='successDialog'></p>
+            </div>
+        </form>
+    </div>
+    <script src='javascripts/newInv.js'></script>
+<% include footer %>

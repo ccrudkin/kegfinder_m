@@ -1,0 +1,36 @@
+<% include header %>
+    <h2>Register</h2>
+
+    <% ar = []; %>
+    <% for (var prop in errors) {%>
+        <p class='errorDialog content'><%= errors[prop] %></p>
+    <% } %>
+    <div class='multiform'>
+        <form id='registerform' action='/login/register' method='post'>
+            <div class='multiforminputs'>
+                <label for='username'>Username:</label>
+                <br>
+                <input id='username' placeholder="Username" name='username'>
+            </div>
+            <div class='multiforminputs'>
+                <label for='useremail'>Email address:</label>
+                <br>
+                <input id='useremail' placeholder="Email address" type='email' name='email'>
+            </div>
+            <div class='multiforminputs'>
+                <label for='password'>Password (5 character min.):</label>
+                <br>
+                <input id='password' placeholder="Password" type='password' name='password'>
+            </div>
+            <div class='multiforminputs'>
+                <label for='password2'>Confirm password:</label>
+                <br>
+                <input id='password2' placeholder="Password" type='password' name='password2'>
+            </div>
+            <div class='multiforminputs'>
+                <input type='submit' value='Register' class='formbutton'>
+            </div>
+        </form>
+    </div>
+
+<% include footer %>

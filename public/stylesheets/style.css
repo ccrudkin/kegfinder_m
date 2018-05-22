@@ -1,0 +1,270 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 1000px;
+  min-height: 100%;
+  font: 14px Roboto, sans-serif;
+  padding: 10px 0px;
+  margin: auto;
+}
+
+a {
+  color: #5dade2;
+}
+
+h1 {
+  font-family: Roboto, sans-serif;
+  position: relative;
+  top: 35px;
+}
+
+h2 {
+  font-family: Roboto, sans-serif;
+  font-size: 20px;
+  width: 700px;
+  color: #45b39d;
+  background-color: #fff;
+  border: 2px solid #45b39d;
+  border-radius: 3px;
+  padding: 5px 10px;
+  position: relative;
+  top: 35px;
+  margin: 15px auto;
+
+}
+
+.navbar {
+  width: 1000px;
+  height: 45px;
+  background-color: #45b39d;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  position: fixed;
+  top: 0px;
+  z-index: 10;
+  margin: auto;
+}
+
+.navbar a {
+  font-family: Roboto;
+  font-size: 18px;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-block;
+  color: #e5e8e8;
+  height: 45px;
+  padding: 10px 20px;
+}
+
+.navbar .userid {
+  background-color: #fff;
+  font-family: Roboto;
+  font-size: 18px;
+  float: right;
+  height: 45px;
+  color: #45b39d;
+  border: 2px solid #eb984e;
+  padding: 8px 20px;
+}
+
+.navbar a:hover {
+  color: #45b39d;
+  background-color: #fff;
+}
+
+.formbutton {
+  color: #e5e8e8;
+  font-family: Roboto, sans-serif;
+  font-weight: 700;
+  border: 2px solid #45b39d;
+  cursor: pointer;
+  background-color: #45b39d;
+  padding: 5px 10px;
+  border-radius: 3px;
+  margin: 5px 5px auto;
+}
+
+.logButton {
+  float: right;
+}
+
+.content {
+  color: #424949;
+  position: relative;
+  width: 700px;
+  top: 35px;
+  border: 1px solid #45b39d;
+  border-radius: 3px;
+  padding: 15px;
+  margin: auto;
+}
+
+.footer {
+  color: #424949;
+  font-size: 14px;
+  position: relative;
+  width: 700px;
+  bottom: -60px;
+  border: 1px solid #45b39d;
+  border-radius: 3px;
+  padding: 10px;
+  margin: 10px auto;
+}
+
+#resetButton {
+  color: #eb984e;
+  background-color: #fff;
+  border: 2px solid #eb984e;
+}
+
+#resetButton:hover {
+  color: #e5e8e8;
+  background-color: #eb984e;
+  border: 2px solid #eb984e;
+}
+
+.formbutton:hover {
+  color: #45b39d;
+  background-color: #fff;
+  border: 2px solid #45b39d;
+  padding: 5px 10px;
+}
+
+.multiform {
+  font-family: Roboto, sans-serif;
+  color: #424949;
+  padding: 10px;
+  position: relative;
+  top: 35px;
+  width: 700px;
+  border: 1px solid #45b39d;
+  border-radius: 3px;
+  margin: auto;
+}
+
+.multiform .multiforminputs {
+  font-family: Roboto, sans-serif;
+  color: #424949;
+  padding: 5px;
+  margin: auto;
+}
+
+.multiform input {
+  font-size: 16px;
+}
+
+input, select, textarea {
+  border: solid 1px #707b7c;
+  padding: 1px 1px 2px 3px;
+  border-radius: 2px;
+}
+
+input:focus, select:focus, textarea:focus {
+  border: solid 1px #5dade2;
+  box-shadow: 0 0 3px #5dade2;
+}
+
+.errorDialog {
+  font-family: Roboto, sans-serif;
+  color: #c0392b;
+  margin: 15px auto;
+}
+
+.loginWarning {
+  width: 60%;
+  font-family: Roboto, sans-serif;
+  color: #c0392b;
+  background-color: #f2d7d5;
+  border-radius: 3px;
+  border: 1px solid #c0392b;
+  padding: 5px;
+  margin: 15px auto;
+}
+
+.successDialog {
+  font-family: Roboto, sans-serif;
+  color: #45b39d;
+}
+
+.loginSuccess {
+  width: 60%;
+  font-family: Roboto, sans-serif;
+  color: #45b39d;
+  background-color: #d0ece7;
+  border-radius: 3px;
+  border: 1px solid #45b39d;
+  padding: 5px;
+  margin: 15px auto;
+}
+
+.catalog {
+  position: relative;
+  top: 50px;
+  padding-bottom: 30px;
+}
+
+.catalog table {
+  width: 100%;
+  border-collapse: collapse;
+  border-left: 3px solid #45b39d;
+  border-radius: 3px;
+  margin: 10px auto;
+}
+
+.catalog thead {
+  font-family: Roboto, sans-serif;
+  font-size: 18px;
+  color: #424949;
+  background-color: #e5e8e8;
+}
+
+.catalog tbody {
+  font-family: Roboto, sans-serif;
+  font-size: 14px;
+}
+
+.hoverable:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.catalog th, td {
+  padding: 5px 15px;
+}
+
+
+#kegNotes {
+  width: 20%;
+  text-decoration: none;
+  cursor: default;
+}
+
+#kegStyle {
+  width: 15%;
+}
+
+.catalog tbody tr:nth-child(even) {
+  background-color: #e5e8e8;
+}
+
+#updateKegs {
+  width: 400px;
+  height: 150px;
+}
+
+#othernotes {
+  width: 300px;
+  height: 60px;
+}
+
+#searchTermWarning {
+  display: inline;
+}
+
+#sortBy {
+  font-size: 14px;
+  text-decoration: none;
+  cursor: default;
+}
