@@ -21,7 +21,12 @@ var logoutRouter = require('./routes/logoutRouter');
 
 var app = express();
 
-// view engine setup
+// production environment session setup
+var session = require('express-session')
+var MemoryStore = require('memorystore')(session)
+
+
+// view engine setup + other setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
@@ -31,10 +36,22 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+/* not suitable for production -- memory leak
 app.use(session({
   secret: 'currentlypublicnotsecret',
   resave: true,
   saveUninitialized: true
+}));
+*/
+
+// use this setup + above (~line 24) for production sessions
+app.use(session({
+  store: new MemoryStore({
+    checkPeriod: 86400000 // prune expired entries every 24h
+  }),
+  secret: 'currentlypublicnotsecret',
+  saveUninitialized: true,
+  resave: true
 }));
 
 app.use(passport.initialize());
