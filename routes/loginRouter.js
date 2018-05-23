@@ -6,6 +6,7 @@ const { matchedData, sanitize } = require('express-validator/filter');
 var passport = require('passport');
 var LocalStrategy = require('passport-local');
 var bcrypt = require('bcryptjs');
+const murl = 'mongodb://firkintime:12kegs16@ds133360.mlab.com:33360/kegfinder';
 
 
 // login page
@@ -60,7 +61,7 @@ router.post('/register', [
             let password = req.body.password;
 
             // new MongoDB access
-            MongoClient.connect('mongodb://localhost:27017', { useNewUrlParser: true}, function (err, client) {
+            MongoClient.connect(murl, { useNewUrlParser: true}, function (err, client) {
                 if (err) throw err;
 
                 const db = client.db('kegfinder');
@@ -96,7 +97,7 @@ router.post('/register', [
 
 // Passport auth setup
 passport.use(new LocalStrategy(function(username, password, done) {
-    MongoClient.connect('mongodb://localhost:27017', {useNewUrlParser: true}, (err, client) => {
+    MongoClient.connect(murl, {useNewUrlParser: true}, (err, client) => {
         if (err) throw err;
         const db = client.db('kegfinder');
 
@@ -138,7 +139,7 @@ passport.serializeUser(function(user, done) {
   });
   
 passport.deserializeUser(function(user, done) {
-    MongoClient.connect('mongodb://localhost:27017', {useNewUrlParser: true}, (err, client) => {
+    MongoClient.connect(murl, {useNewUrlParser: true}, (err, client) => {
         if (err) throw err;
         const db = client.db('kegfinder');
 

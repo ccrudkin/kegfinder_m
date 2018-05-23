@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var MongoClient = require('mongodb').MongoClient;
+const murl = 'mongodb://firkintime:12kegs16@ds133360.mlab.com:33360/kegfinder';
 
 // GET viewInv page
 router.get('/', ensureAuthenticated, function(req, res) {
@@ -16,7 +17,7 @@ router.get('/:condition/:style/:batchid/:location/:notes/:user/:id', ensureAuthe
     delete updates.user; // delete these fields so we can loop through whole object below
     delete updates.id; // keeping these would screw up the for() loop
     
-    MongoClient.connect('mongodb://localhost:27017', {useNewUrlParser: true}, (err, client) => {
+    MongoClient.connect(murl, {useNewUrlParser: true}, (err, client) => {
         if (err) throw err;
         const db = client.db('kegfinder');
 
