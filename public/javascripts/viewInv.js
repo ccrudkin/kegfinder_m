@@ -100,8 +100,8 @@ allCatalog('kegid');
 document.getElementById('searchButton').addEventListener('click', function () { searchOrAll('kegid'); } );
 document.getElementById('resetButton').addEventListener('click', resetFields);
 document.getElementById('resetButton').addEventListener('click', resetCatalog);
-// setup below for doing sorting later on. But how to sort queries vs. whole catalog?
 
+// setup for doing sorting 
 document.getElementById('kegID').addEventListener('click', function () { searchOrAll('kegid'); } );
 document.getElementById('kegType').addEventListener('click', function () { searchOrAll('type'); } );
 document.getElementById('kegStatus').addEventListener('click', function () { searchOrAll('condition'); } );
@@ -109,6 +109,14 @@ document.getElementById('kegStyle').addEventListener('click', function () { sear
 document.getElementById('kegbatchID').addEventListener('click', function () { searchOrAll('batchid'); } );
 document.getElementById('kegLocation').addEventListener('click', function () { searchOrAll('location'); } );
 document.getElementById('kegLastChange').addEventListener('click', function () { searchOrAll('movedate'); } );
+
+// target 'enter' key for search
+document.getElementById('viewInvForm').addEventListener('keydown', (event) => {
+    if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById('searchButton').click();
+    }
+});
 
 
 

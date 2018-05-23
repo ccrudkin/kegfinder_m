@@ -3,3 +3,4 @@ blueprint.txt
 npm-debug.log
 .DS_Store
 /*.env
+.env

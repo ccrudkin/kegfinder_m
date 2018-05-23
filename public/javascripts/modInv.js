@@ -61,4 +61,10 @@ function resetFields() {
 
 document.getElementById('updateButton').addEventListener('click', getForm);
 document.getElementById('resetButton').addEventListener('click', resetFields);
+document.getElementById('updateInvForm').addEventListener('keydown', (event) => {
+    if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById('updateButton').click();
+    }
+});
 

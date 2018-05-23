@@ -6,7 +6,7 @@ const { matchedData, sanitize } = require('express-validator/filter');
 var passport = require('passport');
 var LocalStrategy = require('passport-local');
 var bcrypt = require('bcryptjs');
-const murl = 'mongodb://firkintime:12kegs16@ds133360.mlab.com:33360/kegfinder';
+const murl = process.env.mongodbUrl; // from .env file -- change one place for whole app
 
 
 // login page

@@ -33,3 +33,9 @@ function resetFields() {
 
 document.getElementById('createNewInv').addEventListener('click', newInv);
 document.getElementById('createNewInv').addEventListener('click', resetFields);
+document.getElementById('newInvForm').addEventListener('keydown', (event) => {
+    if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById('createNewInv').click();
+    }
+});

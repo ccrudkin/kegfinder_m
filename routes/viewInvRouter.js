@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var MongoClient = require('mongodb').MongoClient;
-const murl = 'mongodb://firkintime:12kegs16@ds133360.mlab.com:33360/kegfinder';
+const murl = process.env.mongodbUrl; // from .env file -- change one place for whole app
 
 // GET viewInv page
 router.get('/', ensureAuthenticated, function(req, res) {

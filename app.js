@@ -36,20 +36,12 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-/* not suitable for production -- memory leak
-app.use(session({
-  secret: 'currentlypublicnotsecret',
-  resave: true,
-  saveUninitialized: true
-}));
-*/
-
 // use this setup + above (~line 24) for production sessions
 app.use(session({
   store: new MemoryStore({
-    checkPeriod: 86400000 // prune expired entries every 24h
+    checkPeriod: 86400000 // prune expired entries every 24 hours
   }),
-  secret: 'currentlypublicnotsecret',
+  secret: process.env.sessionSecret, // from .env -- change for security
   saveUninitialized: true,
   resave: true
 }));
@@ -71,7 +63,7 @@ app.use(function (req, res, next) {
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/newinventory', newInvRouter);
-app.use('/newinventory=create', newInvCreate); // deprecated?
+app.use('/newinventory=create', newInvCreate);
 app.use('/viewInventory', viewInvRouter);
 app.use('/modInventory', modInvRouter);
 app.use('/responsive', responsive);
