@@ -9,8 +9,8 @@ router.get('/', ensureAuthenticated, function(req, res) {
 });
 
 // Return search results.
-router.get('/:user/:searchBy/:term/:sort', ensureAuthenticated, (req, res) => {
-    let user = req.params.user;
+router.get('/:searchBy/:term/:sort', ensureAuthenticated, (req, res) => {
+    let user = req.user;
     let searchBy = req.params.searchBy;
     let term = req.params.term;
     let sort = req.params.sort;

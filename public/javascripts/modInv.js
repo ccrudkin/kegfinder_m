@@ -14,7 +14,6 @@ function getForm() {
     let batchid = document.getElementById('batchid').value.toUpperCase();
     let location = document.getElementById('location').value.toUpperCase();
     let notes = encodeURIComponent(document.getElementById('notes').value);
-    let user = document.getElementById('userid').innerHTML;
 
     // fix this heinous duplication later with refactored code
     if (condition === '') { 
@@ -32,12 +31,9 @@ function getForm() {
     if (notes === '') {
         notes = '--';
     }
-    if (user === '') {
-        user = '--';
-    }
 
     $.ajax({
-        url: `/modInventory/${condition}/${contents}/${batchid}/${location}/${notes}/${user}/${kegIDs}`,
+        url: `/modInventory/${condition}/${contents}/${batchid}/${location}/${notes}/${kegIDs}`,
         type: 'GET',
         success(res) {
             console.log(res);

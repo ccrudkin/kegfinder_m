@@ -9,12 +9,11 @@ router.get('/', ensureAuthenticated, function(req, res) {
   });
 
 // intake information to update inventory via get
-router.get('/:condition/:style/:batchid/:location/:notes/:user/:id', ensureAuthenticated, (req, res) => {
+router.get('/:condition/:style/:batchid/:location/:notes/:id', ensureAuthenticated, (req, res) => {
     let kegIDs = req.params.id.split(',');
     let updates = Object.assign({}, req.params);
 
     updates['movedate'] = new Date().toDateString(); // set movedate to now
-    delete updates.user; // delete these fields so we can loop through whole object below
     delete updates.id; // keeping these would screw up the for() loop
     
     MongoClient.connect(murl, {useNewUrlParser: true}, (err, client) => {
@@ -25,7 +24,7 @@ router.get('/:condition/:style/:batchid/:location/:notes/:user/:id', ensureAuthe
             for (var key in updates) {
                 if (updates[key] != '--') {
                     // #id
-                    db.collection(`inv_${req.params.user}`).updateOne({kegid: parseInt(id)}, 
+                    db.collection(`inv_${req.user}`).updateOne({kegid: parseInt(id)}, 
                         {$set: { [key]: `${updates[key]}` }}, (err, result) => {
                         if (err) {
                             console.log(err);

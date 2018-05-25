@@ -13,7 +13,6 @@ function searchOrAll(sort) {
 }
 
 function printQuery(sort) {
-    let user = document.getElementById('userid').innerHTML;
     let searchBy = document.getElementById('searchBy').value;
     let searchTerm = document.getElementById('searchTerm').value.toUpperCase();
 
@@ -23,7 +22,7 @@ function printQuery(sort) {
     }
 
     $.ajax({
-        url: `/viewInventory/${user}/${searchBy}/${searchTerm}/${sort}`,
+        url: `/viewInventory/${searchBy}/${searchTerm}/${sort}`,
         type: 'GET',
         success(res) {
             let html = [];
@@ -51,14 +50,13 @@ function printQuery(sort) {
 
 // TODO: Limit to # results per page
 function allCatalog(sort) {
-    let user = document.getElementById('userid').innerHTML;
     let searchBy = document.getElementById('searchBy').value;
     let searchTerm = 'getAll';
 
     console.log(sort);
 
     $.ajax({
-        url: `/viewInventory/${user}/${searchBy}/${searchTerm}/${sort}`,
+        url: `/viewInventory/${searchBy}/${searchTerm}/${sort}`,
         type: 'GET',
         success(res) {
             let html = [];

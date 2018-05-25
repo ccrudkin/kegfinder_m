@@ -7,7 +7,7 @@ const { check, validationResult } = require('express-validator/check');
 
 
 // respond with confirmation
-router.get('/:user/:num/:type/:naming', [
+router.get('/:num/:type/:naming', [
         check('num').isNumeric().withMessage('Please enter a number.')
     ], 
     ensureAuthenticated, (req, res) => {
@@ -18,7 +18,7 @@ router.get('/:user/:num/:type/:naming', [
     if (!result.isEmpty()) {
         res.send(result.array());
     } else {
-        let user = req.params.user;
+        let user = req.user;
         let num = parseInt(req.params.num);
 
         let type = req.params.type;
