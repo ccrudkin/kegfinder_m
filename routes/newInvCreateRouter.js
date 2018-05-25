@@ -36,8 +36,8 @@ router.get('/:user/:num/:type/:naming', [
                     for (let i = 1; i <= num; i++) {
                         // #i
                         db.collection(`inv_${user}`).insertOne({ kegid: i, initialized: `${initdate}`,
-                        condition: 'initialized', type: `${type}`, batchid: 'not set', style: 'not set', 
-                        location: 'not set', movedate: `initialized: ${initdate}`, notes: 'not set'}, (err, result) => {
+                        condition: 'INITIALIZED', type: `${type}`, batchid: 'NOT SET', style: 'NOT SET', 
+                        location: 'NOT SET', movedate: `INITIALIZED: ${initdate}`, notes: 'NOT SET'}, (err, result) => {
                         if (err) {
                             console.log('Error: ' + err);
                         } else {
@@ -54,8 +54,8 @@ router.get('/:user/:num/:type/:naming', [
                         for (let i = lastkeg + 1; i <= num + lastkeg; i++) {
                             // #i
                             db.collection(`inv_${user}`).insertOne({ kegid: i, initialized: `${initdate}`,
-                            condition: 'initialized', type: `${type}`, batchid: 'not set', style: 'not set', 
-                            location: 'not set', movedate: `initialized: ${initdate}`, notes: 'not set'}, (err, results => {
+                            condition: 'INITIALIZED', type: `${type}`, batchid: 'NOT SET', style: 'NOT SET', 
+                            location: 'NOT SET', movedate: `INITIALIZED: ${initdate}`, notes: 'NOT SET'}, (err, results => {
                             if (err) {
                                 console.log('Error: ' + err);
                             } else {

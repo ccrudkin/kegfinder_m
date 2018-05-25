@@ -15,7 +15,7 @@ function searchOrAll(sort) {
 function printQuery(sort) {
     let user = document.getElementById('userid').innerHTML;
     let searchBy = document.getElementById('searchBy').value;
-    let searchTerm = document.getElementById('searchTerm').value;
+    let searchTerm = document.getElementById('searchTerm').value.toUpperCase();
 
     if (searchTerm === '') {
         document.getElementById('searchTermWarning').innerHTML = '&nbspEnter a valid search term or use "Show all".';

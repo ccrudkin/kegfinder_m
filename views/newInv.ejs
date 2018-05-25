@@ -11,9 +11,10 @@
                 <label for='kegType'>Type: </label>
                 <br>
                 <select id='kegType' name='kegType'>
-                    <option value='half'>Half barrel</option>
-                    <option value='sixth'>Sixth barrel</option>
-                    <option value='firkin'>Firkin</option>
+                    <option value='HALF'>1/2 barrel</option>
+                    <option value='SIXTH'>1/6 barrel</option>
+                    <option value='QUARTER'>1/4 barrel</option>
+                    <option value='FIRKIN'>Firkin</option>
                 </select>
             </div>
             <div class='multiforminputs'>
@@ -24,14 +25,25 @@
                     <option value='alphaNum' disabled>4-place alphanumeric</option>
                 </select>
             </div>
-            <!-- <div class='multiforminputs checkbox'>
-                    <label for='addToInvCheck'>Add to existing inventory: </label>
-                    <input type='checkbox' id='addToInvCheck'>
-            </div> -->
             <div>
                 <button type='button' class='formbutton' id='createNewInv'>Create</button>
                 <p id='errorDialog' class='errorDialog'></p>
                 <p id='successDialog' class='successDialog'></p>
+            </div>
+        </form>
+    </div>
+    <h2>Remove kegs from inventory</h2>
+    <div class='multiform'>
+        <form id='removeInvForm'>
+            <div class='multiforminputs'>
+                <label for='removeKegs'>Keg IDs to permanently remove:</label>
+                <br>
+                <textarea id='removeKegs' placeholder='>>> Enter keg IDs separated by commas'></textarea>
+            </div>
+            <div>
+                <button type='button' class='formbutton' id='removeInv'>Remove</button>
+                <p id='rerrorDialog' class='errorDialog'></p>
+                <p id='rsuccessDialog' class='successDialog'></p>
             </div>
         </form>
     </div>

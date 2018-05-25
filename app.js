@@ -18,6 +18,7 @@ var modInvRouter = require('./routes/modInvRouter');
 var responsive = require('./routes/responsiveRouter');
 var loginRouter = require('./routes/loginRouter');
 var logoutRouter = require('./routes/logoutRouter');
+var removeInvRouter = require('./routes/removeInvRouter');
 
 var app = express();
 
@@ -64,6 +65,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/newinventory', newInvRouter);
 app.use('/newinventory=create', newInvCreate);
+app.use('/newinventory=remove', removeInvRouter);
 app.use('/viewInventory', viewInvRouter);
 app.use('/modInventory', modInvRouter);
 app.use('/responsive', responsive);

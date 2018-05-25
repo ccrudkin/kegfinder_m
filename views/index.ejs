@@ -17,7 +17,9 @@
                 <li>last change date</li>
             </ul>
         </p>
-        <p>It's free to use, so <a href='/login/register'>register now</a> and try it out!</p>
+        <% if (!user) { %>
+            <%- "<p>It's free to use, so <a href='/login/register'>register now</a> and try it out!</p>" %>
+        <% } %>
     </div>
 <% include footer %>
 

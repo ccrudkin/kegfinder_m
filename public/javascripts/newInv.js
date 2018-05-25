@@ -25,6 +25,42 @@ function newInv() {
     });
 }
 
+function removeInv() {
+    let kegIDs = document.getElementById('removeKegs').value;
+
+    console.log(kegIDs);
+
+    if (kegIDs === '') {
+        document.getElementById('rerrorDialog').innerHTML = 'Please enter at least one keg ID.';
+        return
+    } else {
+        if (confirm('Are you sure you want to permanently remove these kegs? This cannot be undone.')) {
+            document.getElementById('rerrorDialog').innerHTML = '';
+            kegIDs = kegIDs.replace(/\s+/g, '');
+            kegIDs = kegIDs.split(',');
+            $.ajax({
+                url: `/newinventory=remove/${kegIDs}`,
+                type: 'GET',
+                success (response) {
+                    if (response === 'Success.') {
+                        document.getElementById('rsuccessDialog').innerHTML = 'Removed successfully.' +
+                        "&nbsp&nbsp<a href='/viewInventory'>View inventory</a>";
+                    } else {
+                        document.getElementById('rerrorDialog').innerHTML = response;
+                    }
+                },
+                error(jqXHR, status, errorThrown) {
+                    console.log('Error: ' + status);
+                    document.getElementById('rerrorDialog').innerHTML = status +
+                        'There was an error. Please check inventory and try again.';
+                }
+            });
+        } else {
+            return;
+        }
+    }
+}
+
 function resetFields() {
     document.getElementById('newInvForm').reset();
     document.getElementById('errorDialog').innerHTML = '';
@@ -39,3 +75,4 @@ document.getElementById('newInvForm').addEventListener('keydown', (event) => {
         document.getElementById('createNewInv').click();
     }
 });
+document.getElementById('removeInv').addEventListener('click', removeInv);

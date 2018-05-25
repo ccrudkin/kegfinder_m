@@ -249,9 +249,10 @@ input:focus, select:focus, textarea:focus {
   background-color: #e5e8e8;
 }
 
-#updateKegs {
+textarea {
   width: 400px;
   height: 150px;
+  resize: none;
 }
 
 #othernotes {

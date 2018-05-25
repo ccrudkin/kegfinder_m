@@ -9,14 +9,12 @@ function getForm() {
         kegIDs = kegIDs.split(',');
     }
     
-    let condition = document.getElementById('condition').value;
-    let contents = document.getElementById('contents').value;
-    let batchid = document.getElementById('batchid').value;
-    let location = document.getElementById('location').value;
+    let condition = document.getElementById('condition').value.toUpperCase();
+    let contents = document.getElementById('contents').value.toUpperCase();
+    let batchid = document.getElementById('batchid').value.toUpperCase();
+    let location = document.getElementById('location').value.toUpperCase();
     let notes = encodeURIComponent(document.getElementById('notes').value);
     let user = document.getElementById('userid').innerHTML;
-
-    console.log(notes);
 
     // fix this heinous duplication later with refactored code
     if (condition === '') { 
