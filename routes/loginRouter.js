@@ -118,20 +118,6 @@ passport.use(new LocalStrategy(function(username, password, done) {
             });
         });
     });
-/*
-    db.get(`SELECT username, password FROM users WHERE username = "${username}"`, (err, row) => {
-        if (!row) return done(null, false, {});
-        // hashed password loaded, now compare with input
-        bcrypt.compare(password, row.password, function(err, res) {
-            if (err) {
-                console.log(err);
-                return done(null, false, {});
-            } else {
-                return done(null, row.username);
-            }
-        });
-    });
-*/
 }));
 
 passport.serializeUser(function(user, done) {
@@ -153,16 +139,6 @@ passport.deserializeUser(function(user, done) {
             return done(null, user);
         });
     });
-
-    /* // SQLite method
-    const db = new sqlite.Database('data.db');
-    db.get(`SELECT username FROM users WHERE username = "${user}"`, function(err, row) {
-        if (!row) {
-            console.log('Auth error.');
-            return done(null, false)};
-        return done(null, user);
-    });
-    */
 });
 
 router.post('/', 

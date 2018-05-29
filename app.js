@@ -37,10 +37,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// use this setup + above (~line 24) for production sessions
+// use this setup + above ('production environment session setup') for production sessions
 app.use(session({
   store: new MemoryStore({
-    checkPeriod: 86400000 // prune expired entries every 24 hours
+    checkPeriod: 86400000 // prune expired every 24 hours
   }),
   secret: process.env.sessionSecret, // from .env -- changed for security
   saveUninitialized: true,
