@@ -1,4 +1,4 @@
-$(document).ready(() => { // ugly way to handle this -- find better solution
+$(document).ready(() => { // FIXED -- remove this and test
     $('#searchTermWarning').hide();
 });
 
