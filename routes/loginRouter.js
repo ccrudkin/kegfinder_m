@@ -113,7 +113,11 @@ passport.use(new LocalStrategy(function(username, password, done) {
                     return done(null, false, {});
                 } else {
                     client.close();
-                    return done(null, result[0].username);
+                    if (res) {
+                        return done(null, result[0].username);
+                    } else {
+                        return done(null, false, {});
+                    }
                 }
             });
         });

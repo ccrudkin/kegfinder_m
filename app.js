@@ -1,5 +1,6 @@
 var createError = require('http-errors');
 var express = require('express');
+var helmet = require('helmet');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
@@ -21,6 +22,7 @@ var logoutRouter = require('./routes/logoutRouter');
 var removeInvRouter = require('./routes/removeInvRouter');
 
 var app = express();
+app.use(helmet());
 
 // production environment session setup
 var session = require('express-session')
