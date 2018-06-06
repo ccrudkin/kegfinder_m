@@ -33,6 +33,6 @@
           <%- "<a href='/logout' class='logButton'>Logout</a>" %>
         <% } %>
         <% if (user) { %>
-          <%- "<div class='userid' id='userid'>" %><%= userid %><%- "</div>" %>
+          <%- "<div class='userid' id='userid'>" %><a href='/useraccount'><%= userid %></a><%- "</div>" %>
         <% } %>
     </div>

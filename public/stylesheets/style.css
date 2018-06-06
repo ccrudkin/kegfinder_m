@@ -104,6 +104,20 @@ h2 {
   padding: 8px 20px;
 }
 
+.userid a {
+  height: 100%;
+  color: #45b39d;
+  padding: 2px 15px;
+  margin: 0px;
+}
+
+.userid a:hover {
+  color: #45b39d;
+  padding: 2px 15px;
+  margin: 0px;
+  cursor: pointer;
+}
+
 .navbar a:hover {
   color: #45b39d;
   background-color: #fff;
@@ -179,7 +193,7 @@ h2 {
   margin: auto;
 }
 
-.multiform .multiforminputs {
+.multiforminputs {
   font-family: Roboto, sans-serif;
   color: #424949;
   padding: 5px;
@@ -302,4 +316,11 @@ textarea {
   font-size: 14px;
   text-decoration: none;
   cursor: default;
+}
+
+.details {
+  border: 1px solid #707b7c;
+  border-radius: 3px;
+  padding: 0px 15px;
+  background-color: #e5e8e8;
 }
