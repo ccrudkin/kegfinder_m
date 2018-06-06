@@ -15,18 +15,31 @@ function changePass() {
             console.log(res);
             if (res[0] === 0) {
                 document.getElementById('message').innerHTML = res[1];
+                document.getElementById('errormessage').innerHTML = '';
+                resetFields();
             }
             if (res[0] === 1) {
                 document.getElementById('errormessage').innerHTML = res[1];
+                document.getElementById('message').innerHTML = '';
+                resetFields();
             }
         },
         error(err) {
             console.log(err);
             document.getElementById('errormessage').innerHTML = 'There was an error with the request.';
+            resetFields();
         }
     });
 }
 
-
+function resetFields() {
+    document.getElementById('changePassForm').reset();
+}
 
 document.getElementById('changePassButton').addEventListener('click', changePass);
+document.getElementById('changePassForm').addEventListener('keydown', (event) => {
+    if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById('changePassButton').click();
+    }
+});
