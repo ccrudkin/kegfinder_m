@@ -20,6 +20,7 @@ var responsive = require('./routes/responsiveRouter');
 var loginRouter = require('./routes/loginRouter');
 var logoutRouter = require('./routes/logoutRouter');
 var removeInvRouter = require('./routes/removeInvRouter');
+var helpRouter = require('./routes/helpRouter');
 
 var app = express();
 app.use(helmet());
@@ -73,6 +74,7 @@ app.use('/modInventory', modInvRouter);
 app.use('/responsive', responsive);
 app.use('/login', loginRouter);
 app.use('/logout', logoutRouter);
+app.use('/help', helpRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -63,6 +63,13 @@ h2 {
   margin: 6px 10px;
 }
 
+.logocontainer {
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
 .navbar {
   width: 1000px;
   height: 45px;
