@@ -19,14 +19,18 @@ function changePass() {
                 resetFields();
             }
             if (res[0] === 1) {
-                document.getElementById('errormessage').innerHTML = res[1];
+                let errstring = ''; // iterate through multiple errors
+                for (let i = 0; i < res[1].length; i++) {
+                    errstring = errstring + `<p>${res[1][i]}</p>`
+                }
+                document.getElementById('errormessage').innerHTML = errstring;
                 document.getElementById('message').innerHTML = '';
                 resetFields();
             }
         },
         error(err) {
             console.log(err);
-            document.getElementById('errormessage').innerHTML = 'There was an error with the request.';
+            document.getElementById('errormessage').innerHTML = '<p>There was an error with the request.</p>';
             resetFields();
         }
     });

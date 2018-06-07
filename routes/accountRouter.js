@@ -14,7 +14,7 @@ router.get('/', ensureAuthenticated, (req, res) => {
             throw err;
         }
         const db = client.db('kegfinder');
-
+        // get email address for user account details
         db.collection('users').findOne({ username: `${req.user}` }, (err, result) => {
             if (err) {
                 console.log(err);
@@ -38,8 +38,8 @@ router.post('/change', ensureAuthenticated,
             return `${msg}`;
         };
         const result = validationResult(req).formatWith(errorFormatter);
-        if (!result.isEmpty()) {
-            res.send([1, result.array()]);
+        if (!result.isEmpty()) { // if there are errors, send them
+            res.send([1, result.array()]); // if responseArray[0] === 1, it means errors
         } else {
             MongoClient.connect(murl, {useNewUrlParser: true}, (err, client) => {
                 if (err) {
@@ -47,7 +47,7 @@ router.post('/change', ensureAuthenticated,
                     res.send([1, err]);
                 }
                 const db = client.db('kegfinder');
-        
+                // connect to db and compare current password to stored hash; if true, proceed
                 db.collection('users').find({ username: `${req.user}` }).toArray((err, result) => {
                     bcrypt.compare(req.body.oldPass, result[0].password, function(err, response) {
                         if (err) {
@@ -57,17 +57,16 @@ router.post('/change', ensureAuthenticated,
                         } else {
                             client.close();
                             if (response) {
-                                console.log('Compare response passed: ' + response);
-                                let changeStat = changePass(req.body.newPass);
-                                console.log('Change function status: ' + changeStat);
-                                if (changeStat.length === 0) {
+                                // change password if old pass matches and new passwords validate
+                                let changeStat = changePass(req.body.newPass); 
+                                if (changeStat.length === 0) { // empty array means success
+                                    // if responseArray[0] === 0, it means no errors/success
                                     res.send([0, 'Password changed successfully.']);
                                 } else {
-                                    res.send([1, 'There was an error.']);
+                                    res.send([1, ['There was an error.']]); // consider sending error array
                                 }
                             } else {
-                                console.log('Compare response failed: ' + response);
-                                res.send([1, 'Old password is incorrect.']);
+                                res.send([1, ['Old password is incorrect.']]);
                             }
                         }
                     });
@@ -76,9 +75,9 @@ router.post('/change', ensureAuthenticated,
         }
 
     function changePass(newPass) {
-
+        // returns array of errors if present, else returns empty array
         let errors = [];
-
+        // connect again and replace password with new hash
         MongoClient.connect(murl, {useNewUrlParser: true}, (err, client) => {
             if (err) {
                 console.log(err);
