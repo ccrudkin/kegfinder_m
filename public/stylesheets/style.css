@@ -152,6 +152,7 @@ h2 {
 .footer {
   color: #424949;
   font-size: 14px;
+  text-align: center;
   position: relative;
   width: 700px;
   bottom: -150px;
