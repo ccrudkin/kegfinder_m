@@ -16,3 +16,5 @@ Includes keg inventory building, tracking, and modification. Keg information dat
 
 User login/registration system provides access to view and modify a specific user's inventory of kegs.
 
+kegfinder is currently [live for testing on Heroku](https://kegfinder.herokuapp.com).
+
