@@ -3,9 +3,7 @@
 }
 
 body {
-  width: 1000px;
   font: 14px Roboto, sans-serif;
-  padding: 10px 0px;
   margin: auto;
 }
 
@@ -21,28 +19,42 @@ h1 {
 
 h2 {
   font-family: Roboto, sans-serif;
-  font-size: 20px;
-  width: 700px;
+  font-size: 1.4em;
+  width: 90%;
   color: #45b39d;
   background-color: #fff;
   border: 2px solid #45b39d;
   border-radius: 3px;
   padding: 5px 10px;
-  position: relative;
-  top: 125px;
   margin: 15px auto;
+}
+
+.headCenter {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+}
+
+.headContainer {
+    display: flex;
+    width: 100%;
+    max-width: 1000px;
+    flex-direction: column;
+    align-items: center;
 }
 
 .banner {
   height: 90px;
-  width: 1000px;
+  width: 100%;
   display: flex;
   justify-content: center;
   background-image: url("/images/kegslong.jpeg");
   background-color: #e5e8e8;
   background-size: cover;
   background-repeat: no-repeat;
-  position: fixed;
   top: 0px;
   z-index: 10;
 }
@@ -64,56 +76,52 @@ h2 {
 }
 
 .logocontainer {
-  height: 150px;
+  height: 8rem;
   display: flex;
   justify-content: center;
   align-items: flex-end;
 }
 
 .navbar {
-  width: 1000px;
-  height: 45px;
+  width: 100%;
   background-color: #45b39d;
   border-bottom-right-radius: 3px;
   border-bottom-left-radius: 3px;
-  position: fixed;
-  top: 90px;
   z-index: 9;
   margin: auto;
+  display: flex;
+  justify-content: space-between;
 }
 
 .navbar a {
   font-family: Roboto;
-  font-size: 18px;
+  font-size: 1.4em;
   font-weight: 700;
   text-decoration: none;
   display: inline-block;
   color: #e5e8e8;
-  height: 45px;
-  padding: 10px 20px;
+  height: 100%;
+  padding: .5em .8em;
 }
 
 .navbar .userid {
   background-color: #fff;
   font-family: Roboto;
-  font-size: 18px;
+  font-size: 1em;
   float: right;
-  height: 45px;
   color: #45b39d;
   border: 2px solid #eb984e;
-  padding: 8px 20px;
+  padding: 0em 1em;
 }
 
 .userid a {
   height: 100%;
   color: #45b39d;
-  padding: 2px 15px;
   margin: 0px;
 }
 
 .userid a:hover {
   color: #45b39d;
-  padding: 2px 15px;
   margin: 0px;
   cursor: pointer;
 }
@@ -123,7 +131,20 @@ h2 {
   background-color: #fff;
 }
 
+.mainNav {
+    display: inline-block;
+}
+
+.userNav {
+    display: inline-block;
+}
+
+.menuBar {
+    display: none;
+}
+
 .formbutton {
+  font-size: 1em;  
   color: #e5e8e8;
   font-family: Roboto, sans-serif;
   font-weight: 700;
@@ -139,11 +160,17 @@ h2 {
   float: right;
 }
 
+.main-container {
+    max-width: 1000px;
+    min-width: 300px;
+    position: relative;
+    top: 9rem;
+    margin: auto;
+}
+
 .content {
   color: #424949;
-  position: relative;
-  width: 700px;
-  top: 125px;
+  width: 90%;
   border: 1px solid #45b39d;
   border-radius: 3px;
   padding: 15px;
@@ -155,7 +182,7 @@ h2 {
   font-size: 14px;
   text-align: center;
   position: relative;
-  width: 700px;
+  width: 80%;
   bottom: -150px;
   border: 1px solid #45b39d;
   border-radius: 3px;
@@ -186,9 +213,7 @@ h2 {
   font-family: Roboto, sans-serif;
   color: #424949;
   padding: 10px;
-  position: relative;
-  top: 125px;
-  width: 700px;
+  width: 80%;
   border: 1px solid #45b39d;
   border-radius: 3px;
   margin: auto;
@@ -201,8 +226,10 @@ h2 {
   margin: auto;
 }
 
-.multiform input {
-  font-size: 16px;
+input, select {
+  font-size: 1em;
+  width: 100%;
+  max-width: 15em;
 }
 
 input, select, textarea {
@@ -250,9 +277,11 @@ input:focus, select:focus, textarea:focus {
 }
 
 .catalog {
-  position: relative;
-  top: 140px;
   padding-bottom: 30px;
+}
+
+.small-break {
+    height: 1rem;
 }
 
 .catalog table {
@@ -299,7 +328,9 @@ input:focus, select:focus, textarea:focus {
 }
 
 textarea {
-  width: 400px;
+  font-size: .85em;  
+  width: 100%;  
+  max-width: 400px;
   height: 150px;
   resize: none;
 }
@@ -324,4 +355,78 @@ textarea {
   border-radius: 3px;
   padding: 0px 15px;
   background-color: #e5e8e8;
+}
+
+@media only screen and (max-width: 800px) {
+    .navbar a {
+        font-size: 1.1em;
+        padding: .4em .6em;
+        height: 100%;
+    }
+    .navbar .userid {
+        padding: 0em 1em;
+    }
+    .navbar .userid a {
+        height: 100%;
+    }
+    .main-container {
+        top: 8rem;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    .main-container {
+        top: 0;
+        font-size: 1.25rem;
+    }
+    .menuBar {
+        font-size: 1.5rem;
+        font-weight: 700;
+        width: 100%;
+        color: #e5e8e8;
+        background-color: #45b39d;
+        top: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: .25em 0em;
+    }
+    .menuBar:hover {
+        cursor: pointer;
+    }
+    #hamburger {
+        height: 1.5rem;
+    }
+    .headCenter {
+        position: relative;
+    }
+    .navbar {
+        font-size: 1.5rem;
+        flex-direction: column;
+        align-items: center;
+        display: none;
+    }
+    .mainNav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    .mainNav a {
+        text-align: center;
+        width: 100%;
+        padding: .25em 0em;
+    }
+    .userNav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+    .userNav * {
+        text-align: center;
+        width: 100%;
+        padding: .25em 0em .4em 0em;
+    }
 }

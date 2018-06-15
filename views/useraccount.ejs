@@ -1,35 +1,37 @@
 <% include header %>
-    <h2>Account details</h2>
-    <div class='content'>
-        <h3>Account details</h3>
-        <div class='details'>
-            <p>Username: <strong><%= userid %></strong></p>
-            <p>Email: <strong><%= useremail %></strong></p>
+    <div class='main-container'>
+        <h2>Account details</h2>
+        <div class='content'>
+            <h3>Account details</h3>
+            <div class='details'>
+                <p>Username: <strong><%= userid %></strong></p>
+                <p>Email: <strong><%= useremail %></strong></p>
+            </div>
+            <h3>Change password</h3>
+            <p>New password must be at least 5 characters.</p>
+            <form id='changePassForm'>
+                <div class='multiforminputs'>
+                    <label for='oldPass'>Old password:</label>
+                    <br>
+                    <input type='password' name='oldPass' id='oldPass'>
+                </div>
+                <div class='multiforminputs'>
+                    <label for='newPass'>New password:</label>
+                    <br>
+                    <input type='password' name='newPass' id='newPass'>
+                </div>
+                <div class='multiforminputs'>
+                    <label for='newPass2'>Confirm new password:</label>
+                    <br>
+                    <input type='password' name='newPass2' id='newPass2'>
+                </div>
+                <div>
+                    <button type='button' class='formbutton' id='changePassButton'>Submit</button>
+                </div>
+            </form>
+            <p id='message' class='successDialog'></p>
+            <div id='errormessage' class='errorDialog'></div>
         </div>
-        <h3>Change password</h3>
-        <p>New password must be at least 5 characters.</p>
-        <form id='changePassForm'>
-            <div class='multiforminputs'>
-                <label for='oldPass'>Old password:</label>
-                <br>
-                <input type='password' name='oldPass' id='oldPass'>
-            </div>
-            <div class='multiforminputs'>
-                <label for='newPass'>New password:</label>
-                <br>
-                <input type='password' name='newPass' id='newPass'>
-            </div>
-            <div class='multiforminputs'>
-                <label for='newPass2'>Confirm new password:</label>
-                <br>
-                <input type='password' name='newPass2' id='newPass2'>
-            </div>
-            <div>
-                <button type='button' class='formbutton' id='changePassButton'>Submit</button>
-            </div>
-        </form>
-        <p id='message' class='successDialog'></p>
-        <div id='errormessage' class='errorDialog'></div>
-    </div>
+    </div> 
     <script src='javascripts/useraccount.js'></script>
 <% include footer %>

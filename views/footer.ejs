@@ -1,6 +1,13 @@
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
+        <script>
+            $(document).ready(() => {
+                $('.menuBar').click(() => {
+                    $('.navbar').slideToggle(300, 'swing');
+                });
+            });
+        </script>
     </body>
     <footer class='footer'>
         Kegfinder is a project by Collin Rudkin | 

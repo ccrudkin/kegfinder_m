@@ -1,47 +1,47 @@
 <% include header %>
-    <h2>Update keg inventory</h2>
-    <div class='multiform'>
-        <form id='updateInvForm' autocomplete='off'>
-            <div class='multiforminputs'>
-                <label for='updateKegs'>Keg IDs to update:</label>
-                <br>
-                <textarea id='updateKegs' placeholder='>>> Enter keg IDs separated by commas'></textarea>
-            </div>
-            <div class='multiforminputs'>
-                <label for='condition'>New status: </label>
-                <br>
-                <input id='condition' placeholder='Enter status'>
-            </div>
-            <div class='multiforminputs'>
-                <label for='contents'>New contents: </label>
-                <br>
-                <input id='contents' placeholder='Enter style'>
-            </div>
-            <div class='multiforminputs'>
-                <label for='batchid'>New batch ID: </label>
-                <br>
-                <input id='batchid' placeholder='Enter batch ID'>
-            </div>
-            <div class='multiforminputs'>
-                <label for='location'>New location: </label>
-                <br>
-                <input id='location' placeholder='Enter location'>
-            </div>
-            <div class='multiforminputs'>
-                <label for='notes'>Notes: </label>
-                <br>
-                <textarea id='notes' placeholder='Enter notes (100 characters max)' maxlength='100'></textarea>
-            </div>
-            <div>
-                <button type='button' class='formbutton' id='updateButton'>Update</button>
-                <button type='button' class='formbutton' id='resetButton'>Reset</button>
-            </div>
-        </form>
-        <p id='message' class='successDialog'></p>
-        <p id='errormessage' class='errorDialog'></p>
-    </div>
-    <div class='catalog' id='invSearchResults'>
-
+    <div class='main-container'>
+        <h2>Update keg inventory</h2>
+        <div class='multiform'>
+            <form id='updateInvForm' autocomplete='off'>
+                <div class='multiforminputs'>
+                    <label for='updateKegs'>Keg IDs to update:</label>
+                    <br>
+                    <textarea id='updateKegs' placeholder='>>> Enter keg IDs separated by commas'></textarea>
+                </div>
+                <div class='multiforminputs'>
+                    <label for='condition'>New status: </label>
+                    <br>
+                    <input id='condition' placeholder='Enter status'>
+                </div>
+                <div class='multiforminputs'>
+                    <label for='contents'>New contents: </label>
+                    <br>
+                    <input id='contents' placeholder='Enter style'>
+                </div>
+                <div class='multiforminputs'>
+                    <label for='batchid'>New batch ID: </label>
+                    <br>
+                    <input id='batchid' placeholder='Enter batch ID'>
+                </div>
+                <div class='multiforminputs'>
+                    <label for='location'>New location: </label>
+                    <br>
+                    <input id='location' placeholder='Enter location'>
+                </div>
+                <div class='multiforminputs'>
+                    <label for='notes'>Notes: </label>
+                    <br>
+                    <textarea id='notes' placeholder='Enter notes (100 characters max)' maxlength='100'></textarea>
+                </div>
+                <div>
+                    <button type='button' class='formbutton' id='updateButton'>Update</button>
+                    <button type='button' class='formbutton' id='resetButton'>Reset</button>
+                </div>
+            </form>
+            <p id='message' class='successDialog'></p>
+            <p id='errormessage' class='errorDialog'></p>
+        </div>
+        <div class='small-break'></div>
     </div>
     <script src='javascripts/modInv.js'></script>
 <% include footer %>

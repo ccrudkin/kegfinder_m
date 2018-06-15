@@ -1,28 +1,30 @@
 <% include header %>
-    <h2>Welcome to Kegfinder</h2>
-    <div class='content'>
-        <p>Kegfinder is a brewery-focused web app to track beer kegs and provide inventory information and 
-        production insights.</p>
-        <p>Current features include keg inventory building and tracking with intuitive Search and Sort functions. 
-            Track vital information about your kegs, including:</p>
-        <p>
-            <ul>
-                <li>Keg ID</li>
-                <li>initialized date</li>
-                <li>keg condition</li>
-                <li>keg type</li>
-                <li>batch ID</li>
-                <li>contents/style</li>
-                <li>notes</li>
-                <li>last change date</li>
-            </ul>
-        </p>
-        <p>Head to the <a href='/help'>Help</a> page to find our quick-start guide and usage tips.</p>
-        <% if (!user) { %>
-            <%- "<p>It's free to use, so <a href='/login/register'>register now</a> and try it out!</p>" %>
-        <% } %>
-        <div class='logocontainer'>
-            <img src='/images/kegcap.png' height='125'>
+    <div class='main-container'>
+        <h2>Welcome to Kegfinder</h2>
+        <div class='content'>
+            <p>Kegfinder is a brewery-focused web app to track beer kegs and provide inventory information and 
+            production insights.</p>
+            <p>Current features include keg inventory building and tracking with intuitive Search and Sort functions. 
+                Track vital information about your kegs, including:</p>
+            <p>
+                <ul>
+                    <li>Keg ID</li>
+                    <li>initialized date</li>
+                    <li>keg condition</li>
+                    <li>keg type</li>
+                    <li>batch ID</li>
+                    <li>contents/style</li>
+                    <li>notes</li>
+                    <li>last change date</li>
+                </ul>
+            </p>
+            <p>Head to the <a href='/help'>Help</a> page to find our quick-start guide and usage tips.</p>
+            <% if (!user) { %>
+                <%- "<p>It's free to use, so <a href='/login/register'>register now</a> and try it out!</p>" %>
+            <% } %>
+            <div class='logocontainer'>
+                <img src='/images/kegcap.png' height='125'>
+            </div>
         </div>
     </div>
 <% include footer %>

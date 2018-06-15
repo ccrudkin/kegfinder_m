@@ -1,51 +1,53 @@
 <% include header %>
-    <h2>Initialize new kegs</h2>
-    <div class='multiform'>
-        <form id='newInvForm'>
-            <div class='multiforminputs'>
-                <label for='newInvSize'>Number: </label>
-                <br>
-                <input id='newInvSize' placeholder='Number of new kegs'>
-            </div>
-            <div class='multiforminputs'>
-                <label for='kegType'>Type: </label>
-                <br>
-                <select id='kegType' name='kegType'>
-                    <option value='HALF'>1/2 barrel</option>
-                    <option value='SIXTH'>1/6 barrel</option>
-                    <option value='QUARTER'>1/4 barrel</option>
-                    <option value='FIRKIN'>Firkin</option>
-                </select>
-            </div>
-            <div class='multiforminputs'>
-                <label for='nameScheme'>Naming scheme: </label>
-                <br>
-                <select id='nameScheme'>
-                    <option value='startOne'>Count from 1</option>
-                    <option value='alphaNum' disabled>4-place alphanumeric</option>
-                </select>
-            </div>
-            <div>
-                <button type='button' class='formbutton' id='createNewInv'>Create</button>
-                <p id='errorDialog' class='errorDialog'></p>
-                <p id='successDialog' class='successDialog'></p>
-            </div>
-        </form>
-    </div>
-    <h2>Remove kegs from inventory</h2>
-    <div class='multiform'>
-        <form id='removeInvForm'>
-            <div class='multiforminputs'>
-                <label for='removeKegs'>Keg IDs to permanently remove:</label>
-                <br>
-                <textarea id='removeKegs' placeholder='>>> Enter keg IDs separated by commas'></textarea>
-            </div>
-            <div>
-                <button type='button' class='formbutton' id='removeInv'>Remove</button>
-                <p id='rerrorDialog' class='errorDialog'></p>
-                <p id='rsuccessDialog' class='successDialog'></p>
-            </div>
-        </form>
+    <div class='main-container'>
+        <h2>Initialize new kegs</h2>
+        <div class='multiform'>
+            <form id='newInvForm'>
+                <div class='multiforminputs'>
+                    <label for='newInvSize'>Number: </label>
+                    <br>
+                    <input id='newInvSize' placeholder='Number of new kegs'>
+                </div>
+                <div class='multiforminputs'>
+                    <label for='kegType'>Type: </label>
+                    <br>
+                    <select id='kegType' name='kegType'>
+                        <option value='HALF'>1/2 barrel</option>
+                        <option value='SIXTH'>1/6 barrel</option>
+                        <option value='QUARTER'>1/4 barrel</option>
+                        <option value='FIRKIN'>Firkin</option>
+                    </select>
+                </div>
+                <div class='multiforminputs'>
+                    <label for='nameScheme'>Naming scheme: </label>
+                    <br>
+                    <select id='nameScheme'>
+                        <option value='startOne'>Count from 1</option>
+                        <option value='alphaNum' disabled>4-place alphanumeric</option>
+                    </select>
+                </div>
+                <div>
+                    <button type='button' class='formbutton' id='createNewInv'>Create</button>
+                    <p id='errorDialog' class='errorDialog'></p>
+                    <p id='successDialog' class='successDialog'></p>
+                </div>
+            </form>
+        </div>
+        <h2>Remove kegs from inventory</h2>
+        <div class='multiform'>
+            <form id='removeInvForm'>
+                <div class='multiforminputs'>
+                    <label for='removeKegs'>Keg IDs to permanently remove:</label>
+                    <br>
+                    <textarea id='removeKegs' placeholder='>>> Enter keg IDs separated by commas'></textarea>
+                </div>
+                <div>
+                    <button type='button' class='formbutton' id='removeInv'>Remove</button>
+                    <p id='rerrorDialog' class='errorDialog'></p>
+                    <p id='rsuccessDialog' class='successDialog'></p>
+                </div>
+            </form>
+        </div>
     </div>
     <script src='javascripts/newInv.js'></script>
 <% include footer %>

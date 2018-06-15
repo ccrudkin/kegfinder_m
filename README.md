@@ -1,5 +1,5 @@
 # kegfinder_m
-A brewery-focused web app to track beer kegs and provide inventory information and production analytics. Prototyped on a SQLite, this version has been refactored to run on MongoDB in order to provide flexibility and ease of future scaling.
+A brewery-focused web app to track beer kegs and provide inventory information and production analytics. Prototyped on a SQLite database, this version has been refactored to run on MongoDB in order to provide flexibility and ease of future scaling.
 
 ### Features 
 Includes keg inventory building, tracking, and modification. Keg information data fields include:
