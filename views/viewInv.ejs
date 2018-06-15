@@ -31,22 +31,20 @@
         </div>
         <div class='small-break'></div>
         <div class='catalog' id='invSearchResults'>
-                <table>  
-                    <thead id='tabHead'>
-                        <tr>
-                            <th id='sortBy'>Sort:</th>
-                            <th id='kegID' class='hoverable'>ID</th>
-                            <th id='kegType' class='hoverable'>Type</th> 
-                            <th id='kegStatus' class='hoverable'>Status</th> 
-                            <th id='kegStyle' class='hoverable'>Style</th> 
-                            <th id='kegbatchID' class='hoverable'>Batch</th> 
-                            <th id='kegLocation' class='hoverable'>Location</th>
-                            <th id='kegLastChange' class='hoverable'>Last change</th>
-                            <th id='kegNotes'>Notes</th>
-                        </tr>
-                    </thead>
-                    <tbody id='invSearchBody'></tbody>
-                </table>
+            <div class='flexTable'>
+                <div class='tabLabels'>
+                    <div id='sortByCont'>Sort:</div>
+                    <div id='kegIDCont' class='hoverable'>ID</div>
+                    <div id='kegTypeCont' class='hoverable'>Type</div> 
+                    <div id='kegStatusCont' class='hoverable'>Status</div> 
+                    <div id='kegStyleCont' class='hoverable'>Style</div> 
+                    <div id='kegBatchIDCont' class='hoverable'>Batch</div> 
+                    <div id='kegLocationCont' class='hoverable'>Location</div>
+                    <div id='kegLastChangeCont' class='hoverable'>Last change</div>
+                    <div id='kegNotesCont'>Notes</div>
+                </div>
+                <div id='tabResults'></div>
+            </div>
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"

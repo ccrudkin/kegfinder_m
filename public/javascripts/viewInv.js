@@ -25,22 +25,49 @@ function printQuery(sort) {
         url: `/viewInventory/${searchBy}/${searchTerm}/${sort}`,
         type: 'GET',
         success(res) {
-            let html = [];
+            let resphtml = [];
             res.forEach((row) => {
-                html.push('<tr>');
-                html.push('<td></td>');
-                html.push('<td>' + row.kegid + '</td>');
-                html.push('<td>' + row.type + '</td>');
-                html.push('<td>' + row.condition + '</td>');
-                html.push('<td>' + row.style + '</td>');
-                html.push('<td>' + row.batchid + '</td>');
-                html.push('<td>' + row.location + '</td>');
-                html.push('<td>' + row.movedate + '</td>');
-                html.push('<td>' + row.notes + '</td>');
-                html.push('</tr>');
+                resphtml.push("<div class='resultContainer'>");
+                    resphtml.push("<div id='sortByCont' class='rowContainer'>");
+                        resphtml.push("<div class='cardLabel'></div>");
+                        resphtml.push("<div id='sortBy'></div>");
+                    resphtml.push("</div>");
+                    resphtml.push("<div id='kegIDCont' class='rowContainer'>");
+                        resphtml.push("<div class='cardLabel'>Keg ID:</div>");
+                        resphtml.push(`<div id='kegID'>${row.kegid}</div>`);
+                    resphtml.push("</div>");
+                    resphtml.push("<div id='kegTypeCont' class='rowContainer'>");
+                        resphtml.push("<div class='cardLabel'>Type:</div>");
+                        resphtml.push(`<div id='kegType'>${row.type}</div>`);
+                    resphtml.push("</div>");
+                    resphtml.push("<div id='kegStatusCont' class='rowContainer'>");
+                        resphtml.push("<div class='cardLabel'>Status:</div>");
+                        resphtml.push(`<div id='kegStatus'>${row.condition}</div>`);
+                    resphtml.push("</div>");
+                    resphtml.push("<div id='kegStyleCont' class='rowContainer'>");
+                        resphtml.push("<div class='cardLabel'>Style:</div>");
+                        resphtml.push(`<div id='kegStyle'>${row.style}</div>`);
+                    resphtml.push("</div>");
+                    resphtml.push("<div id='kegBatchIDCont' class='rowContainer'>");
+                        resphtml.push("<div class='cardLabel'>Batch:</div>");
+                        resphtml.push(`<div id='kegBatchID'>${row.batchid}</div>`);
+                    resphtml.push("</div>");
+                    resphtml.push("<div id='kegLocationCont' class='rowContainer'>");
+                        resphtml.push("<div class='cardLabel'>Location:</div>");
+                        resphtml.push(`<div id='kegLocation'>${row.location}</div>`);
+                    resphtml.push("</div>");
+                    resphtml.push("<div id='kegLastChangeCont' class='rowContainer'>");
+                        resphtml.push("<div class='cardLabel'>Last Change:</div>");
+                        resphtml.push(`<div id='kegLastChange'>${row.movedate}</div>`);
+                    resphtml.push("</div>");
+                    resphtml.push("<div id='kegNotesCont' class='rowContainer'>");
+                        resphtml.push("<div class='cardLabel'>Notes:</div>");
+                        resphtml.push(`<div id='kegNotes'>${row.notes}</div>`);
+                    resphtml.push("</div>");                        
+                resphtml.push("</div>");
             });
-            // html.push('</tbody></table>');
-            document.getElementById('invSearchBody').innerHTML = html.join('');
+
+            document.getElementById('tabResults').innerHTML = resphtml.join('');
             document.getElementById('searchTermWarning').innerHTML = '';
         }, error(jqXHR, status, errorThrown) {
             console.log(status + ' ' + errorThrown);
@@ -59,22 +86,49 @@ function allCatalog(sort) {
         url: `/viewInventory/${searchBy}/${searchTerm}/${sort}`,
         type: 'GET',
         success(res) {
-            let html = [];
+            let resphtml = [];
             res.forEach((row) => {
-                html.push('<tr>');
-                html.push('<td></td>');
-                html.push('<td>' + row.kegid + '</td>');
-                html.push('<td>' + row.type + '</td>');
-                html.push('<td>' + row.condition + '</td>');
-                html.push('<td>' + row.style + '</td>');
-                html.push('<td>' + row.batchid + '</td>');
-                html.push('<td>' + row.location + '</td>');
-                html.push('<td>' + row.movedate + '</td>');
-                html.push('<td>' + row.notes + '</td>');
-                html.push('</tr>');
+                resphtml.push("<div class='resultContainer'>");
+                    resphtml.push("<div id='sortByCont' class='rowContainer'>");
+                        resphtml.push("<div class='cardLabel'></div>");
+                        resphtml.push("<div id='sortBy'></div>");
+                    resphtml.push("</div>");
+                    resphtml.push("<div id='kegIDCont' class='rowContainer'>");
+                        resphtml.push("<div class='cardLabel'>Keg ID:</div>");
+                        resphtml.push(`<div id='kegID'>${row.kegid}</div>`);
+                    resphtml.push("</div>");
+                    resphtml.push("<div id='kegTypeCont' class='rowContainer'>");
+                        resphtml.push("<div class='cardLabel'>Type:</div>");
+                        resphtml.push(`<div id='kegType'>${row.type}</div>`);
+                    resphtml.push("</div>");
+                    resphtml.push("<div id='kegStatusCont' class='rowContainer'>");
+                        resphtml.push("<div class='cardLabel'>Status:</div>");
+                        resphtml.push(`<div id='kegStatus'>${row.condition}</div>`);
+                    resphtml.push("</div>");
+                    resphtml.push("<div id='kegStyleCont' class='rowContainer'>");
+                        resphtml.push("<div class='cardLabel'>Style:</div>");
+                        resphtml.push(`<div id='kegStyle'>${row.style}</div>`);
+                    resphtml.push("</div>");
+                    resphtml.push("<div id='kegBatchIDCont' class='rowContainer'>");
+                        resphtml.push("<div class='cardLabel'>Batch:</div>");
+                        resphtml.push(`<div id='kegBatchID'>${row.batchid}</div>`);
+                    resphtml.push("</div>");
+                    resphtml.push("<div id='kegLocationCont' class='rowContainer'>");
+                        resphtml.push("<div class='cardLabel'>Location:</div>");
+                        resphtml.push(`<div id='kegLocation'>${row.location}</div>`);
+                    resphtml.push("</div>");
+                    resphtml.push("<div id='kegLastChangeCont' class='rowContainer'>");
+                        resphtml.push("<div class='cardLabel'>Last Change:</div>");
+                        resphtml.push(`<div id='kegLastChange'>${row.movedate}</div>`);
+                    resphtml.push("</div>");
+                    resphtml.push("<div id='kegNotesCont' class='rowContainer'>");
+                        resphtml.push("<div class='cardLabel'>Notes:</div>");
+                        resphtml.push(`<div id='kegNotes'>${row.notes}</div>`);
+                    resphtml.push("</div>");                        
+                resphtml.push("</div>");
             });
-            // html.push('</tbody></table>');
-            document.getElementById('invSearchBody').innerHTML = html.join('');
+
+            document.getElementById('tabResults').innerHTML = resphtml.join('');
             document.getElementById('searchTermWarning').innerHTML = '';
         }, error(jqXHR, status, errorThrown) {
             console.log(status + ' ' + errorThrown);
@@ -100,13 +154,13 @@ document.getElementById('resetButton').addEventListener('click', resetFields);
 document.getElementById('resetButton').addEventListener('click', resetCatalog);
 
 // setup for doing sorting 
-document.getElementById('kegID').addEventListener('click', function () { searchOrAll('kegid'); } );
-document.getElementById('kegType').addEventListener('click', function () { searchOrAll('type'); } );
-document.getElementById('kegStatus').addEventListener('click', function () { searchOrAll('condition'); } );
-document.getElementById('kegStyle').addEventListener('click', function () { searchOrAll('style'); } );
-document.getElementById('kegbatchID').addEventListener('click', function () { searchOrAll('batchid'); } );
-document.getElementById('kegLocation').addEventListener('click', function () { searchOrAll('location'); } );
-document.getElementById('kegLastChange').addEventListener('click', function () { searchOrAll('movedate'); } );
+document.getElementById('kegIDCont').addEventListener('click', function () { searchOrAll('kegid'); } );
+document.getElementById('kegTypeCont').addEventListener('click', function () { searchOrAll('type'); } );
+document.getElementById('kegStatusCont').addEventListener('click', function () { searchOrAll('condition'); } );
+document.getElementById('kegStyleCont').addEventListener('click', function () { searchOrAll('style'); } );
+document.getElementById('kegBatchIDCont').addEventListener('click', function () { searchOrAll('batchid'); } );
+document.getElementById('kegLocationCont').addEventListener('click', function () { searchOrAll('location'); } );
+document.getElementById('kegLastChangeCont').addEventListener('click', function () { searchOrAll('movedate'); } );
 
 // target 'enter' key for search
 document.getElementById('viewInvForm').addEventListener('keydown', (event) => {

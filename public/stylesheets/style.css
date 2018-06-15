@@ -199,7 +199,6 @@ h2 {
 #resetButton:hover {
   color: #e5e8e8;
   background-color: #eb984e;
-  border: 2px solid #eb984e;
 }
 
 .formbutton:hover {
@@ -238,9 +237,22 @@ input, select, textarea {
   border-radius: 2px;
 }
 
+select {
+    background-color: #fff;
+}
+
+textarea {
+    font-size: .85em;  
+    width: 100%;  
+    max-width: 400px;
+    height: 150px;
+    resize: none;
+  }
+
 input:focus, select:focus, textarea:focus {
-  border: solid 1px #5dade2;
-  box-shadow: 0 0 3px #5dade2;
+  outline: 0;  
+  border: solid 1px #5DADE2;
+  box-shadow: 0 0 3px #5DADE2;
 }
 
 .errorDialog {
@@ -284,24 +296,53 @@ input:focus, select:focus, textarea:focus {
     height: 1rem;
 }
 
-.catalog table {
-  width: 100%;
-  border-collapse: collapse;
-  border-left: 3px solid #45b39d;
-  border-radius: 3px;
-  margin: 10px auto;
+.flexTable {
+    font-size: 1em;
+    width: 100%;
+    margin: 10px auto;
+    display: flex;
+    flex-direction: column;
 }
 
-.catalog thead {
-  font-family: Roboto, sans-serif;
-  font-size: 18px;
-  color: #424949;
-  background-color: #e5e8e8;
+.tabLabels {
+    height: 2.5em;
+    background-color: #e5e8e8;
+    font-size: 1.25em;
+    font-weight: 700;
+    color: #424949;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
-.catalog tbody {
-  font-family: Roboto, sans-serif;
-  font-size: 14px;
+.tabLabels div {
+    padding: .5rem;
+}
+
+#tabResults {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#tabResults > div:nth-of-type(even) {
+    background-color: #e5e8e8;
+}
+
+.resultContainer {
+    width: 100%;
+    color: #424949;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.cardLabel {
+    display: none;
+}
+
+.resultContainer > * {
+    padding: .5rem;
 }
 
 .hoverable:hover {
@@ -309,30 +350,49 @@ input:focus, select:focus, textarea:focus {
   text-decoration: underline;
 }
 
-.catalog th, td {
-  padding: 5px 15px;
+#sortByCont {
+    width: 5%;
+    font-size: .8em;
+    text-decoration: none;
+    cursor: default;
+  }
+
+#kegIDCont {
+    width: 4%;
 }
 
-#kegNotes {
-  width: 25%;
+#kegTypeCont {
+    width: 10%;
+}
+
+#kegStatusCont {
+    width: 10%;
+}
+
+#kegStyleCont {
+    width: 12.5%;
+  }
+
+#kegBatchIDCont {
+    width: 10%;
+}
+
+#kegLocationCont {
+    width: 15%;
+}
+
+kegLastChangeCont {
+    width: 12.5%;
+}
+
+#kegNotesCont {
+  width: 21%;
   text-decoration: none;
   cursor: default;
 }
 
-#kegStyle {
-  width: 15%;
-}
-
 .catalog tbody tr:nth-child(even) {
   background-color: #e5e8e8;
-}
-
-textarea {
-  font-size: .85em;  
-  width: 100%;  
-  max-width: 400px;
-  height: 150px;
-  resize: none;
 }
 
 #othernotes {
@@ -342,12 +402,6 @@ textarea {
 
 #searchTermWarning {
   display: inline;
-}
-
-#sortBy {
-  font-size: 14px;
-  text-decoration: none;
-  cursor: default;
 }
 
 .details {
@@ -371,6 +425,63 @@ textarea {
     }
     .main-container {
         top: 8rem;
+    }
+    .tabLabels {
+        display: none;
+    }
+    .resultContainer {
+        width: 95%;
+        color: #424949;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: flex-start;
+        border-bottom: 1px solid #424949;
+    }
+    .resultContainer div {
+        width: 100%;
+        padding: .25em .5em;
+    }
+    .rowContainer {
+        display: flex;
+    }
+    .cardLabel {
+        width: 25%;
+        display: inline-block;
+        font-weight: 700;
+        text-align: right;
+    }
+    #sortByCont {
+        width: 100%;
+        font-size: .8em;
+        text-decoration: none;
+        cursor: default;
+    }
+    #kegIDCont {
+        width: 100%;
+    }
+    #kegTypeCont {
+        width: 100%;
+    }
+    #kegStatusCont {
+        width: 100%;
+    }
+    #kegStyleCont {
+        width: 100%;
+      }
+    #kegBatchIDCont {
+        width: 100%;
+    }
+    #kegLocationCont {
+        width: 100%;
+    }
+    kegLastChangeCont {
+        width: 100%;
+    }
+    #kegNotesCont {
+      width: 100%;
+      text-decoration: none;
+      cursor: default;
     }
 }
 
@@ -428,5 +539,8 @@ textarea {
         text-align: center;
         width: 100%;
         padding: .25em 0em .4em 0em;
+    }
+    .resultContainer {
+        font-size: 1rem;
     }
 }
