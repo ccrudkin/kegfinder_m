@@ -1,7 +1,3 @@
-$(document).ready(() => { // FIXED -- remove this and test
-    $('#searchTermWarning').hide();
-});
-
 function searchOrAll(sort) {
     let searchTerm = document.getElementById('searchTerm').value;
 
@@ -15,11 +11,6 @@ function searchOrAll(sort) {
 function printQuery(sort) {
     let searchBy = document.getElementById('searchBy').value;
     let searchTerm = document.getElementById('searchTerm').value.toUpperCase();
-
-    if (searchTerm === '') {
-        document.getElementById('searchTermWarning').innerHTML = '&nbspEnter a valid search term or use "Show all".';
-        $('#searchTermWarning').show();
-    }
 
     $.ajax({
         url: `/viewInventory/${searchBy}/${searchTerm}/${sort}`,
@@ -80,7 +71,14 @@ function allCatalog(sort) {
     let searchBy = document.getElementById('searchBy').value;
     let searchTerm = 'getAll';
 
-    console.log(sort);
+    console.log('Search by: ' + searchBy);
+
+    if (searchBy != 'kegid') {
+        document.getElementById('searchTermWarning').innerHTML = '&nbspEnter a valid search ' + 
+        'term or "Reset" to show all.';
+        $('#searchTermWarning').show();
+        return;
+    }
 
     $.ajax({
         url: `/viewInventory/${searchBy}/${searchTerm}/${sort}`,
