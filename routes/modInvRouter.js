@@ -13,7 +13,7 @@ router.get('/:condition/:style/:batchid/:location/:notes/:id', ensureAuthenticat
     let kegIDs = req.params.id.split(',');
     let updates = Object.assign({}, req.params);
 
-    updates['movedate'] = new Date().toDateString(); // set movedate to now
+    updates['movedate'] = (new Date().toISOString()).slice(0, 10); // set movedate to now
     delete updates.id; // keeping these would screw up the for() loop
     
     MongoClient.connect(murl, {useNewUrlParser: true}, (err, client) => {

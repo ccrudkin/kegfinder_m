@@ -183,6 +183,7 @@ h2 {
   text-align: center;
   position: relative;
   width: 80%;
+  max-width: 1000px;
   bottom: -150px;
   border: 1px solid #45b39d;
   border-radius: 3px;
@@ -262,7 +263,7 @@ input:focus, select:focus, textarea:focus {
 }
 
 .loginWarning {
-  width: 60%;
+  width: 80%;
   font-family: Roboto, sans-serif;
   color: #c0392b;
   background-color: #f2d7d5;
@@ -278,7 +279,7 @@ input:focus, select:focus, textarea:focus {
 }
 
 .loginSuccess {
-  width: 60%;
+  width: 80%;
   font-family: Roboto, sans-serif;
   color: #45b39d;
   background-color: #d0ece7;
@@ -381,7 +382,7 @@ input:focus, select:focus, textarea:focus {
     width: 15%;
 }
 
-kegLastChangeCont {
+#kegLastChangeCont {
     width: 12.5%;
 }
 
@@ -475,7 +476,7 @@ kegLastChangeCont {
     #kegLocationCont {
         width: 100%;
     }
-    kegLastChangeCont {
+    #kegLastChangeCont {
         width: 100%;
     }
     #kegNotesCont {
